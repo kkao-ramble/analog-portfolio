@@ -1,0 +1,15 @@
+* NMOS Id-Vds family, SKY130 tt corner
+.lib /foss/pdks/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+
+XM1 d g 0 0 sky130_fd_pr__nfet_01v8 W=10 L=1
+Vds d 0 0
+Vgs g 0 0
+
+.dc Vds 0 1.8 0.01 Vgs 0.6 1.8 0.2
+
+.control
+run
+let id = -i(Vds)
+wrdata idvds.csv id
+.endc
+.end
