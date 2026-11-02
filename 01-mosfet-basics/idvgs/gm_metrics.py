@@ -21,3 +21,12 @@ print(f"peak gm/Id = {ratio[i]:.1f} 1/V at Vgs = {vgs[i]:.2f} V")
 dgm = np.gradient(gm, vgs)
 j = np.argmax(dgm)
 print(f"gm inflection at Vgs = {vgs[j]:.2f} V")
+
+# Vth extraction
+limits = [0.05, 0.1, 0.15]
+s = np.gradient(np.sqrt(ids), vgs)
+k = np.argmax(s)
+for limit in limits:
+    m = (vgs > vgs[k] - limit) & (vgs < vgs[k] + limit)
+    slope, intercept = np.polyfit(vgs[m], np.sqrt(ids[m]), 1)
+    print(f"x intercept = intercept/slope: {-intercept/slope:.2f} V")

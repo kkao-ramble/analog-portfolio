@@ -1,0 +1,28 @@
+# ngspice
+- idvgs.spice is set to sweep Id across Vgs 0-1.8V step size 0.01V; fixed Vds=1.8V
+- ngspice -b idvgs.spice
+
+# Python script rundown
+plot_idvgs.py
+- Plots id_vgs linear Id curve based on the idvgs.csv data generated from idvgs.spice
+- Plots id_vgs sqrt Id curve "
+- Plots id_vgs log Id curve "
+
+plot_gm_idvgs.py
+- Plots gm_vgs linear gm curve based on gradient(gm) of idvgs.csv data
+- Plots gm/Id_vgs log gm/Id curve based on gradient over Id of idvgs.csv data
+
+gm_metrics.py
+- extracts data
+	- subthreshold swing
+		- uses log Id data and fit linear line to the subreshold region. resulting slope is subthresh swing
+	- peak gm/Id
+		- puts gradient of ids,vgs (gm) list over Id to get the gm/Id ratio list, then find which index associates to max value
+	- gm inflection (where it's rising fastest)
+		- find gradient of gm, vgs, then find which index associates to max 
+	- Vth
+		- Find gradient of √Id,vgs, then find which index associates to max. That index indicates where slope of √Id,vgs is highest
+		- polyfit line with 3 bound values +/- 0.05, 0.1, 0.15
+		- calculate x intercept from y = mx + b
+
+
