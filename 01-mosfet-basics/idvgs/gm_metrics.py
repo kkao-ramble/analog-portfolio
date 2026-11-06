@@ -30,3 +30,5 @@ for limit in limits:
     m = (vgs > vgs[k] - limit) & (vgs < vgs[k] + limit)
     slope, intercept = np.polyfit(vgs[m], np.sqrt(ids[m]), 1)
     print(f"x intercept = intercept/slope: {-intercept/slope:.2f} V")
+Beta = 2* s[k]**2
+print(f"Beta: {Beta:.4f}")

@@ -1,0 +1,7 @@
+swing = 86.0 mV/dec, n = 1.45
+peak gm/Id = 27.3 1/V at Vgs = 0.23 V
+gm inflection at Vgs = 0.70 V
+x intercept = intercept/slope: 0.56 V
+x intercept = intercept/slope: 0.56 V
+x intercept = intercept/slope: 0.55 V
+Beta: 0.0025

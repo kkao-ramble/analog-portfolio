@@ -26,5 +26,9 @@ print(f"gm inflection at Vgs = {vgs[j]:.2f} V")
 Vds = 0.1
 k = np.argmax(gm)
 Vth = vgs[k] - ids[k]/gm[k] - Vds/2
+#Beta = unCoxW/L
+Beta = gm[k]/Vds
 print(f"Vth (vds = {Vds:.2f} V): {Vth:.2f} V")
 print(f"Vgs @ max gm: {vgs[k]:.2f} V")
+print(f"Beta: {Beta:.4f}")
+

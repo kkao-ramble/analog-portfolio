@@ -1,0 +1,6 @@
+swing = 85.8 mV/dec, n = 1.44
+peak gm/Id = 27.5 1/V at Vgs = 0.17 V
+gm inflection at Vgs = 0.64 V
+Vth (vds = 0.10 V): 0.59 V
+Vgs @ max gm: 0.84 V
+Beta: 0.0027
